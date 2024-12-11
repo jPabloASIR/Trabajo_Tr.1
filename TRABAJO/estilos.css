@@ -1,0 +1,148 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #FFECB3;
+    font-family: 'Arial', sans-serif;
+}
+
+.top-message {
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    color: #0277bd;
+}
+
+/* Barra de navegación */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #0277bd;
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos */
+    padding: 10px 20px;
+    align-items: center;
+}
+
+/* Contenedor para los botones centrados */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los botones */
+}
+
+li {
+    display: inline;
+}
+
+li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 18px;
+    border: 2px solid transparent; /* Agregar borde transparente inicialmente */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+li a:hover:not(.active) {
+    background-color: #01579b;
+}
+
+.active {
+    background-color: #04AA6D;
+    border: 2px solid #04AA6D; /* Borde verde cuando el botón está activo */
+}
+
+li a:not(.active) {
+    border: 2px solid #4CAF50; /* Borde verde para los botones inactivos */
+}
+
+/* Estilos para los botones */
+.btn-group {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-group button {
+    padding: 20px 50px;
+    margin: 0 15px;
+    border: none;
+    background-color: #0277bd;
+    color: white;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-group button:hover {
+    background-color: #01579b;
+}
+
+.btn-group button.active {
+    background-color: #01579b; /* Azul más oscuro para el botón presionado */
+}
+
+/* Ocultar las tablas inicialmente */
+.table-container {
+    display: none;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    table-layout: fixed;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 20px;
+    text-align: center;
+}
+
+th {
+    background-color: #0277bd;
+    color: white;
+    font-weight: bold;
+    border-right: 2px solid #0288d1;
+}
+
+th:last-child {
+    border-right: none;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+/* Asegúrate de que el contenido no se trunque dentro de las celdas de la tabla */
+.table-container table {
+    width: 100%; /* Hace que la tabla ocupe todo el ancho disponible */
+    table-layout: auto; /* Permite que la tabla ajuste su tamaño dinámicamente */
+}
+
+/* Asegúrate de que el contenido de cada celda no se corte ni se trunque */
+.table-container table td {
+    white-space: normal;  /* Permite que el texto se divida en varias líneas */
+    overflow: visible;    /* Permite que el contenido exceda el contenedor sin truncarse */
+    word-wrap: break-word;/* Permite el salto de palabras largas */
+    text-overflow: clip;  /* Elimina puntos suspensivos si el texto excede */
+}
+
+/* En caso de que el texto dentro de la tabla esté causando el problema por tener un tamaño fijo */
+.table-container {
+    width: 100%;
+    height: auto; /* Asegura que el contenedor se expanda para ajustarse al contenido */
+    overflow: visible; /* Permite que el contenido se muestre sin recortes */
+}
+

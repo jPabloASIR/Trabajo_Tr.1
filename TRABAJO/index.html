@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web4u</title>
+    <link rel="stylesheet" href="estilos.css"/> <!-- Conexión al archivo CSS para los estilos -->
+</head>
+
+<body>
+    <div id="container"> <!-- Contenedor principal para organizar toda la web -->
+    
+    <!-- Barra de navegación -->
+    <ul>
+        <li><a href="#" id="englishBtn">ENGLISH</a></li>
+        <li class="nav-buttons">
+            <a href="HTML.html" id="htmlBtn">HTML</a>
+            <a href="CSS.html" id="cssBtn">CSS</a>
+            <a href="SVG.html" id="svgBtn">SVG</a>
+        </li>
+        <li><a href="#" id="aboutBtn">ABOUT</a></li>
+    </ul>
+
+    <div class="top-message">
+        <h1>Bienvenido a Web4U2</h1>
+        <p>La mejor página web para aprender a programar.</p>
+    </div>
+
+    <!-- Contenedor para mostrar las tablas -->
+    <div class="container">
+        <!-- Tabla de HTML -->
+        <div id="htmlTable" class="table-container"></div>
+        
+        <!-- Tabla de CSS -->
+        <div id="cssTable" class="table-container"></div>
+
+        <!-- Tabla de SVG -->
+        <div id="svgTable" class="table-container"></div>
+
+        <!-- Tabla de ABOUT -->
+        <div id="aboutTable" class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ABOUT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Programador de la página</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Función para ocultar todas las tablas
+        function hideAllTables() {
+            var tables = document.querySelectorAll(".table-container");
+            tables.forEach(function(table) {
+                table.style.display = "none"; // Ocultar todas las tablas
+            });
+        }
+    
+        // Lógica para mostrar o esconder la tabla correspondiente
+        function toggleButtonAndTable(buttonId, tableId) {
+            var button = document.getElementById(buttonId);
+            var table = document.getElementById(tableId);
+    
+            // Si la tabla está oculta, la mostramos y activamos el botón
+            if (table.style.display === "none") {
+                hideAllTables(); // Ocultar todas las tablas
+                table.style.display = "block"; // Mostrar la tabla correspondiente
+                button.classList.add("active"); // Activar el botón
+            } else {
+                // Si la tabla ya está visible, la ocultamos y desactivamos el botón
+                table.style.display = "none"; 
+                button.classList.remove("active"); // Desactivar el botón
+            }
+    
+            clearActiveButtons(button); // Limpiar el estado de otros botones
+        }
+    
+        // Función para limpiar los botones activos
+        function clearActiveButtons(currentButton) {
+            var buttons = document.querySelectorAll("ul li a");
+            buttons.forEach(function(button) {
+                if (button !== currentButton) {
+                    button.classList.remove("active"); // Desactivar otros botones
+                }
+            });
+        }
+    
+        document.addEventListener("DOMContentLoaded", function() {
+            // Asignar los event listeners a los botones
+            document.getElementById("htmlBtn").addEventListener("click", function() {
+                toggleButtonAndTable("htmlBtn", "htmlTable");
+            });
+    
+            document.getElementById("cssBtn").addEventListener("click", function() {
+                toggleButtonAndTable("cssBtn", "cssTable");
+            });
+    
+            document.getElementById("svgBtn").addEventListener("click", function() {
+                toggleButtonAndTable("svgBtn", "svgTable");
+            });
+    
+            document.getElementById("aboutBtn").addEventListener("click", function() {
+                toggleButtonAndTable("aboutBtn", "aboutTable");
+            });
+        });
+    
+        // Asegúrate de que las tablas están ocultas inicialmente
+        hideAllTables();
+    </script>
+
+</body>
+
+</html>
