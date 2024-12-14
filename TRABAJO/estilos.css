@@ -175,3 +175,8 @@ td {
     gap:10px;
     flex-direction:row;
 }
+/* Para evitar sobrecargas*/
+.prueba img {
+    width: 550px; /* Tamaño uniforme */
+    height: 550px; /* Tamaño uniforme */
+  }
