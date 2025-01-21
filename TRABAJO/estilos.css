@@ -125,13 +125,13 @@ td {
     background-color: #f9f9f9;
 }
 
-/* Asegúrate de que el contenido no se trunque dentro de las celdas de la tabla */
+
 .table-container table {
     width: 100%; /* Hace que la tabla ocupe todo el ancho disponible */
     table-layout: auto; /* Permite que la tabla ajuste su tamaño dinámicamente */
 }
 
-/* Asegúrate de que el contenido de cada celda no se corte ni se trunque */
+
 .table-container table td {
     white-space: normal;  /* Permite que el texto se divida en varias líneas */
     overflow: visible;    /* Permite que el contenido exceda el contenedor sin truncarse */
